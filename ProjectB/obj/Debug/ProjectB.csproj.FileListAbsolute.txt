@@ -1,0 +1,12 @@
+R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\bin\Debug\ProjectB.exe.config
+R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\bin\Debug\ProjectB.exe
+R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\bin\Debug\ProjectB.pdb
+R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\obj\Debug\ProjectB.csprojAssemblyReference.cache
+R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\obj\Debug\ProjectB.SRfrm.resources
+R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\obj\Debug\ProjectB.Properties.Resources.resources
+R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.GenerateResource.cache
+R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.CoreCompileInputs.cache
+R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\obj\Debug\ProjectB.exe
+R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\obj\Debug\ProjectB.pdb
+R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\obj\Debug\ProjectB.studentlist.resources
+R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\obj\Debug\ProjectB.Main_Screen.resources
