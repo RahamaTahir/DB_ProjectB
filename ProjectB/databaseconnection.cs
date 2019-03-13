@@ -75,7 +75,27 @@ namespace ProjectB
                 return student_list;
             }
 
-            public SqlDataReader Getdata(string query)
+        public List<Clo> ListofClo(string commandText)
+        {
+            connection = Getconnection();
+            SqlCommand cmd = new SqlCommand(commandText, connection);
+            List<Clo> clo_list = new List<Clo>();
+            var reader = Getdata(commandText);
+            while (reader.Read())
+            {
+
+                Clo n_clo = new Clo();
+                n_clo.Id = Convert.ToInt32(reader.GetValue(0));
+                n_clo.Name = reader.GetString(1);
+                n_clo.Datecreated = reader.GetDateTime(2).Date;
+                n_clo.Dateupdated = reader.GetDateTime(3).Date;
+                
+                clo_list.Add(n_clo);
+            }
+            return clo_list;
+        }
+
+        public SqlDataReader Getdata(string query)
             {
                 connection = Getconnection();
                 SqlCommand cmd = new SqlCommand(query, connection);

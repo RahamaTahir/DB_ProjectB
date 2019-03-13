@@ -45,7 +45,7 @@ namespace ProjectB
 
         private void studentlist_Load(object sender, EventArgs e)
         {
-            DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
+            //DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
             //btn.Name = "Del";
             ///btn.Text = "Delete";
             //btn.UseColumnTextForButtonValue = false;
@@ -54,8 +54,9 @@ namespace ProjectB
             BindingSource s = new BindingSource();
             s.DataSource = databaseconnection.get_instance().Listofstudents(cmd);
             studentdata.DataSource = s;
+
+            //here I covwet the status from 5,6 to Active, InActive
             int rowIndex = 0;
-            
             foreach (DataGridViewRow dgvRow in studentdata.Rows)
             {
                 if (dgvRow.Cells[9].FormattedValue.ToString() == "5")
@@ -80,6 +81,34 @@ namespace ProjectB
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnregister_Click(object sender, EventArgs e)
+        {
+
+            SRfrm n = new SRfrm();
+            this.Hide();
+            n.Show();
+        }
+
+        private void btnStdList_Click(object sender, EventArgs e)
+        {
+            this.Show();
+        }
+
+        private void btnAddclo_Click(object sender, EventArgs e)
+        {
+
+            Clos k = new Clos();
+            this.Hide();
+            k.Show();
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            Main_Screen n = new Main_Screen();
+            this.Hide();
+            n.Show();
         }
     }
 }

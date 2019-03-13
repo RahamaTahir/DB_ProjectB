@@ -15,7 +15,16 @@ namespace ProjectB
         public Main_Screen()
         {
             InitializeComponent();
-          
+            databaseconnection.get_instance().connectionstring = "Data Source=HAIER-PC;Initial Catalog=ProjectB;Integrated Security=True";
+            try
+            {
+                var con = databaseconnection.get_instance().Getconnection();
+                con.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -40,6 +49,13 @@ namespace ProjectB
         private void Main_Screen_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAddclo_Click(object sender, EventArgs e)
+        {
+            Clos n = new Clos();
+            this.Hide();
+            n.Show();
         }
     }
 }

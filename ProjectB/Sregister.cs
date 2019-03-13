@@ -16,22 +16,13 @@ namespace ProjectB
         public SRfrm()
         {
             InitializeComponent();
-            databaseconnection.get_instance().connectionstring = "Data Source=HAIER-PC;Initial Catalog=ProjectB;Integrated Security=True";
-            try
-            {
-                var con = databaseconnection.get_instance().Getconnection();
-                con.Open();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
         }
 
         addstudent student = new addstudent();
         bool n = true;
 
-        private void btnSregister_Click(object sender, EventArgs e)
+        private void btnSregister_Click_1(object sender, EventArgs e)
         {
 
             try
@@ -123,5 +114,32 @@ namespace ProjectB
                 n = false;
             }
         }
+        
+        private void btnregister_Click(object sender, EventArgs e)
+        {
+            this.Show();
+        }
+
+        private void btnAddclo_Click(object sender, EventArgs e)
+        {
+            Clos n = new Clos();
+            this.Hide();
+            n.Show();
+        }
+
+        private void btnStdList_Click(object sender, EventArgs e)
+        {
+            studentlist j = new studentlist();
+            this.Hide();
+            j.Show();
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            Main_Screen g = new Main_Screen();
+            this.Hide();
+            g.Show();
+        }
+        
     }
 }
