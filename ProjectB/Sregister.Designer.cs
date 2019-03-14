@@ -72,6 +72,7 @@
             this.txtSFname = new System.Windows.Forms.TextBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -143,17 +144,19 @@
             // 
             // label7
             // 
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Microsoft Tai Le", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(288, 8);
+            this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(200, 50);
+            this.label7.Size = new System.Drawing.Size(796, 69);
             this.label7.TabIndex = 2;
-            this.label7.Text = "Add CLO";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label7.Text = "Re‪gister Here";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btnStdList);
             this.panel2.Controls.Add(this.btnAddclo);
             this.panel2.Controls.Add(this.btnregister);
@@ -210,6 +213,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(600, 377);
             this.panel3.TabIndex = 3;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel25
             // 
@@ -522,6 +526,17 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "First Name";
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Location = new System.Drawing.Point(0, 97);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(198, 30);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Manage Rubric & Rubric Level";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // SRfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -531,7 +546,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "SRfrm";
-            this.Text = "Student Registeration ";
+            this.Text = "Lab Assessment Project";
             this.Load += new System.EventHandler(this.SRfrm_Load);
             this.panel1.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
@@ -620,6 +635,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Button button1;
     }
 }
 

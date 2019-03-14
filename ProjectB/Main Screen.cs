@@ -57,5 +57,12 @@ namespace ProjectB
             this.Hide();
             n.Show();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Clos h = new Clos();
+            this.Hide();
+            h.Show();
+        }
     }
 }

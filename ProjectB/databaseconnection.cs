@@ -46,7 +46,28 @@ namespace ProjectB
                 }
             }
 
-            public List<addstudent> Listofstudents(string commandText)
+
+        public List<levelrubrics> Listoflevels(string commandText)
+        {
+            connection = Getconnection();
+            SqlCommand cmd = new SqlCommand(commandText, connection);
+            List<levelrubrics> level1 = new List<levelrubrics>();
+            var reader = Getdata(commandText);
+            while (reader.Read())
+            {
+
+                levelrubrics level = new levelrubrics();
+                level.Id = Convert.ToInt32(reader.GetValue(0));
+                level.Details = reader.GetString(2);
+                level.RubricId = Convert.ToInt32(reader.GetValue(1));
+                level.MeasurementLevel = Convert.ToInt32(reader.GetValue(3));
+                level1.Add(level);
+            }
+            return level1;
+        }
+
+
+        public List<addstudent> Listofstudents(string commandText)
             {
                 connection = Getconnection();
                 SqlCommand cmd = new SqlCommand(commandText, connection);
@@ -93,6 +114,23 @@ namespace ProjectB
                 clo_list.Add(n_clo);
             }
             return clo_list;
+        }
+
+        public List<Rubricaddclass> Listofrubrics(string commandText)
+        {
+            connection = Getconnection();
+            SqlCommand cmd = new SqlCommand(commandText, connection);
+            List<Rubricaddclass> rubric = new List<Rubricaddclass>();
+            var reader = Getdata(commandText);
+            while (reader.Read())
+            {
+                Rubricaddclass j = new Rubricaddclass();
+                j.Id = Convert.ToInt32(reader.GetValue(0));
+                j.Details = reader.GetString(1);
+                j.Cloid = Convert.ToInt32(reader.GetValue(2));
+                rubric.Add(j);
+            }
+            return rubric;
         }
 
         public SqlDataReader Getdata(string query)

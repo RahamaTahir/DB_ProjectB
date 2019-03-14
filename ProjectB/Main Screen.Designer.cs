@@ -44,6 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -55,31 +56,34 @@
             // 
             // btnStdList
             // 
-            this.btnStdList.Location = new System.Drawing.Point(3, 81);
+            this.btnStdList.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStdList.Location = new System.Drawing.Point(0, 66);
             this.btnStdList.Name = "btnStdList";
-            this.btnStdList.Size = new System.Drawing.Size(245, 31);
+            this.btnStdList.Size = new System.Drawing.Size(256, 31);
             this.btnStdList.TabIndex = 1;
-            this.btnStdList.Text = "View Student List";
+            this.btnStdList.Text = "Manage Student List";
             this.btnStdList.UseVisualStyleBackColor = true;
             this.btnStdList.Click += new System.EventHandler(this.btnStdList_Click);
             // 
             // btnregister
             // 
-            this.btnregister.Location = new System.Drawing.Point(2, 7);
+            this.btnregister.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnregister.Location = new System.Drawing.Point(0, 0);
             this.btnregister.Name = "btnregister";
-            this.btnregister.Size = new System.Drawing.Size(245, 32);
+            this.btnregister.Size = new System.Drawing.Size(256, 32);
             this.btnregister.TabIndex = 0;
-            this.btnregister.Text = "Register";
+            this.btnregister.Text = "Add Student";
             this.btnregister.UseVisualStyleBackColor = true;
             this.btnregister.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnAddclo
             // 
-            this.btnAddclo.Location = new System.Drawing.Point(2, 44);
+            this.btnAddclo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddclo.Location = new System.Drawing.Point(0, 32);
             this.btnAddclo.Name = "btnAddclo";
-            this.btnAddclo.Size = new System.Drawing.Size(245, 34);
+            this.btnAddclo.Size = new System.Drawing.Size(256, 34);
             this.btnAddclo.TabIndex = 2;
-            this.btnAddclo.Text = "Add CLO";
+            this.btnAddclo.Text = "Manage Clo(s)";
             this.btnAddclo.UseVisualStyleBackColor = true;
             this.btnAddclo.Click += new System.EventHandler(this.btnAddclo_Click);
             // 
@@ -156,9 +160,9 @@
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.label3);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(293, 0);
+            this.panel6.Location = new System.Drawing.Point(258, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(507, 350);
+            this.panel6.Size = new System.Drawing.Size(542, 350);
             this.panel6.TabIndex = 1;
             // 
             // label5
@@ -168,7 +172,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(0, 112);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(505, 37);
+            this.label5.Size = new System.Drawing.Size(540, 37);
             this.label5.TabIndex = 3;
             this.label5.Text = "2016-CS-264";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -180,7 +184,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(0, 75);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(505, 37);
+            this.label4.Size = new System.Drawing.Size(540, 37);
             this.label4.TabIndex = 2;
             this.label4.Text = "Rahama Tahir";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -192,7 +196,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(505, 38);
+            this.label2.Size = new System.Drawing.Size(540, 38);
             this.label2.TabIndex = 0;
             this.label2.Text = "Data Base Project";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -204,7 +208,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(505, 37);
+            this.label3.Size = new System.Drawing.Size(540, 37);
             this.label3.TabIndex = 1;
             this.label3.Text = "Section C";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -212,14 +216,26 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.btnStdList);
             this.panel5.Controls.Add(this.btnAddclo);
             this.panel5.Controls.Add(this.btnregister);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(293, 350);
+            this.panel5.Size = new System.Drawing.Size(258, 350);
             this.panel5.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Location = new System.Drawing.Point(0, 97);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(256, 30);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Manage Rubric & Rubric Level";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Main_Screen
             // 
@@ -229,7 +245,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Name = "Main_Screen";
-            this.Text = "Main_Screen";
+            this.Text = "Lab Assessment Project";
             this.Load += new System.EventHandler(this.Main_Screen_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -258,5 +274,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }

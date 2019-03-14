@@ -29,9 +29,32 @@ namespace ProjectB
                 if (i > 0)
                 {
                     MessageBox.Show("Deleted.");
-                    studentlist d = new studentlist();
-                    this.Hide();
-                    d.Show();
+                    string cmd2 = "SELECT * FROM Student";
+                    BindingSource s = new BindingSource();
+                    s.DataSource = databaseconnection.get_instance().Listofstudents(cmd2);
+                    studentdata.DataSource = s;
+
+                    //here I covwet the status from 5,6 to Active, InActive
+                    int rowIndex = 0;
+                    foreach (DataGridViewRow dgvRow in studentdata.Rows)
+                    {
+                        if (dgvRow.Cells[9].FormattedValue.ToString() == "5")
+                        // Here I'd update the row (at this point I already have the row index)
+                        {
+                            dgvRow.Cells[0].Value = "Active";
+                        }
+                        if (dgvRow.Cells[9].FormattedValue.ToString() == "6")
+                        {
+                            dgvRow.Cells[0].Value = "InActive";
+                        }
+                        rowIndex++;
+
+                    }
+                    //studentdata.Columns.Add(btn);
+                    studentdata.Columns.RemoveAt(9);
+                    studentdata.Columns["txt_status"].DisplayIndex = studentdata.ColumnCount - 1;
+                    studentdata.Columns["edit"].DisplayIndex = studentdata.ColumnCount - 1;
+                    studentdata.Columns["btn_del"].DisplayIndex = studentdata.ColumnCount - 1;
                 }
             }
            
@@ -109,6 +132,15 @@ namespace ProjectB
             Main_Screen n = new Main_Screen();
             this.Hide();
             n.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            Clos h = new Clos();
+            this.Hide();
+            h.Show();
+
         }
     }
 }

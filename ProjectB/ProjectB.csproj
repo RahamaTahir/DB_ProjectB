@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="addstudent.cs" />
+    <Compile Include="addrubric.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addrubric.Designer.cs">
+      <DependentUpon>addrubric.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clo.cs" />
     <Compile Include="Clos.cs">
       <SubType>Form</SubType>
@@ -55,11 +61,20 @@
       <DependentUpon>Clos.cs</DependentUpon>
     </Compile>
     <Compile Include="databaseconnection.cs" />
+    <Compile Include="levelrubrics.cs" />
     <Compile Include="Main Screen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main Screen.Designer.cs">
       <DependentUpon>Main Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="newrubric.cs" />
+    <Compile Include="Rubricaddclass.cs" />
+    <Compile Include="rubriclevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rubriclevel.Designer.cs">
+      <DependentUpon>rubriclevel.cs</DependentUpon>
     </Compile>
     <Compile Include="Sregister.cs">
       <SubType>Form</SubType>
@@ -75,11 +90,17 @@
     <Compile Include="studentlist.Designer.cs">
       <DependentUpon>studentlist.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="addrubric.resx">
+      <DependentUpon>addrubric.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clos.resx">
       <DependentUpon>Clos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Screen.resx">
       <DependentUpon>Main Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rubriclevel.resx">
+      <DependentUpon>rubriclevel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sregister.resx">
       <DependentUpon>Sregister.cs</DependentUpon>

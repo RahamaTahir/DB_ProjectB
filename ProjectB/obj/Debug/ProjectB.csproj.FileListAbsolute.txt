@@ -36,3 +36,5 @@ C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB - Copy\ProjectB\obj\Debug\P
 C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB - Copy\ProjectB\obj\Debug\ProjectB.csproj.CoreCompileInputs.cache
 C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB - Copy\ProjectB\obj\Debug\ProjectB.exe
 C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB - Copy\ProjectB\obj\Debug\ProjectB.pdb
+C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\obj\Debug\ProjectB.addrubric.resources
+C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\obj\Debug\ProjectB.rubriclevel.resources
