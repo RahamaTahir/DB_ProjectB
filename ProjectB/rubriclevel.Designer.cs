@@ -34,6 +34,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnStdList = new System.Windows.Forms.Button();
             this.btnAddclo = new System.Windows.Forms.Button();
             this.btnregister = new System.Windows.Forms.Button();
@@ -57,7 +58,6 @@
             this.datalevel = new System.Windows.Forms.DataGridView();
             this.btn_levelDel = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btn_updatelevel = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -137,6 +137,17 @@
             this.panel2.Size = new System.Drawing.Size(200, 417);
             this.panel2.TabIndex = 3;
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Location = new System.Drawing.Point(0, 97);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(198, 30);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Manage Rubric & Rubric Level";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btnStdList
             // 
             this.btnStdList.Dock = System.Windows.Forms.DockStyle.Top;
@@ -195,10 +206,10 @@
             // txtML
             // 
             this.txtML.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtML.Location = new System.Drawing.Point(139, 0);
+            this.txtML.Location = new System.Drawing.Point(205, 0);
             this.txtML.Multiline = true;
             this.txtML.Name = "txtML";
-            this.txtML.Size = new System.Drawing.Size(415, 37);
+            this.txtML.Size = new System.Drawing.Size(349, 37);
             this.txtML.TabIndex = 3;
             // 
             // label4
@@ -207,7 +218,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 37);
+            this.label4.Size = new System.Drawing.Size(205, 37);
             this.label4.TabIndex = 2;
             this.label4.Text = "Measurement Level";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -368,17 +379,6 @@
             this.btn_updatelevel.Name = "btn_updatelevel";
             this.btn_updatelevel.Text = "Update";
             this.btn_updatelevel.UseColumnTextForButtonValue = true;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Location = new System.Drawing.Point(0, 97);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(198, 30);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Manage Rubric & Rubric Level";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // rubriclevel
             // 

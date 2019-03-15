@@ -18,9 +18,20 @@ namespace ProjectB
             InitializeComponent();
         }
 
+        //declare rubric type object to access it to the whole form
         newrubric rubric = new newrubric();
+
+        //flag for edit function operate on the same page IF TRUE(Create object) IF FALSE(edit object)
         bool flag = true;
+
+        //to store the id of rubric to access it to  other forms
         public static int id;
+
+        /// <summary>
+        /// Clo add and edit in this function using bool flag
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCloadd_Click(object sender, EventArgs e)
         {
             try
@@ -59,6 +70,11 @@ namespace ProjectB
             }
         }
         
+        /// <summary>
+        /// When load the form it update the datagrid view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addrubric_Load(object sender, EventArgs e)
         {
             SqlDataReader read1 = databaseconnection.get_instance().Getdata("SELECT * FROM Clo");
@@ -80,6 +96,11 @@ namespace ProjectB
 
         }
 
+        /// <summary>
+        /// when any delete, update, manage rubric button click it do the corresponding action 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             id = Convert.ToInt32(this.datarubric.Rows[e.RowIndex].Cells[3].Value);
@@ -137,6 +158,7 @@ namespace ProjectB
         
         private void btnregister_Click(object sender, EventArgs e)
         {
+            //show the Student Register form
             SRfrm i = new SRfrm();
             this.Hide();
             i.Show();
@@ -144,6 +166,7 @@ namespace ProjectB
 
         private void btnAddclo_Click(object sender, EventArgs e)
         {
+            //show the Clo manage form
             Clos h = new Clos();
             this.Hide();
             h.Show();
@@ -151,6 +174,7 @@ namespace ProjectB
 
         private void btnStdList_Click(object sender, EventArgs e)
         {
+            //Show the student list form 
             studentlist h = new studentlist();
             this.Hide();
             h.Show();
@@ -158,6 +182,7 @@ namespace ProjectB
 
         private void button4_Click(object sender, EventArgs e)
         {
+            //Shows the main screen
             Main_Screen g = new Main_Screen();
             this.Hide();
             g.Show();
@@ -165,10 +190,16 @@ namespace ProjectB
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Show the Clos screen
             Clos h = new Clos();
             this.Hide();
             h.Show();
         
     }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

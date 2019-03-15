@@ -34,6 +34,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnStdList = new System.Windows.Forms.Button();
             this.btnAddclo = new System.Windows.Forms.Button();
             this.btnregister = new System.Windows.Forms.Button();
@@ -72,7 +73,6 @@
             this.txtSFname = new System.Windows.Forms.TextBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -165,6 +165,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 377);
             this.panel2.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Location = new System.Drawing.Point(0, 97);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(198, 30);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Manage Rubric & Rubric Level";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnStdList
             // 
@@ -502,7 +513,7 @@
             // 
             // txtSFname
             // 
-            this.txtSFname.Location = new System.Drawing.Point(35, 16);
+            this.txtSFname.Location = new System.Drawing.Point(35, 11);
             this.txtSFname.Name = "txtSFname";
             this.txtSFname.Size = new System.Drawing.Size(298, 20);
             this.txtSFname.TabIndex = 20;
@@ -525,17 +536,6 @@
             this.label1.Size = new System.Drawing.Size(92, 21);
             this.label1.TabIndex = 14;
             this.label1.Text = "First Name";
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Location = new System.Drawing.Point(0, 97);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(198, 30);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Manage Rubric & Rubric Level";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SRfrm
             // 

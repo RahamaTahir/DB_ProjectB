@@ -18,10 +18,20 @@ namespace ProjectB
             InitializeComponent();
         }
 
+        //new Clo type of object is created to access it to the whole form code
         Clo new_clo = new Clo();
+
+        //Flag created to manage the edit and create role
         bool flag = true;
+        
+        //this maintain the clo id 
         public static int Clo_Id;
 
+        /// <summary>
+        /// This function add the clo and update the clo by using flag
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCloadd_Click(object sender, EventArgs e)
         {
             try
@@ -58,6 +68,11 @@ namespace ProjectB
             }
         }
 
+        /// <summary>
+        /// This function update,delete and manage Rubrics accordingly
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void clodata_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Clo_Id = Convert.ToInt32(this.clodata.Rows[e.RowIndex].Cells[3].Value);
@@ -95,7 +110,7 @@ namespace ProjectB
                                 int y = databaseconnection.get_instance().Executequery(cmd5);
                             }
                         }
-                        string cmd2 = @"delete from Rubric where CloId=" + Clo_Id; ;
+                        string cmd2 = @"delete from Rubric where Id=" + temp; ;
                         int s = databaseconnection.get_instance().Executequery(cmd2);
 
                     }
@@ -125,6 +140,11 @@ namespace ProjectB
             }
         }
 
+        /// <summary>
+        /// This data the datagrid view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnShowclo_Click(object sender, EventArgs e)
         {
 
@@ -148,6 +168,11 @@ namespace ProjectB
 
         }
 
+        /// <summary>
+        /// Function to calll other screens
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_back_Click(object sender, EventArgs e)
         {
             Main_Screen g = new Main_Screen();

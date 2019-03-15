@@ -17,8 +17,16 @@ namespace ProjectB
         {
             InitializeComponent();
         }
-    
+        //stores the current student id
         public static int C_Id;
+
+        /// <summary>
+        /// Perform fumction the basis of type of cell clicked
+        /// Update to update the student
+        /// Delete to delete the student 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             C_Id = Convert.ToInt32(this.studentdata.Rows[e.RowIndex].Cells[3].Value);
@@ -38,12 +46,12 @@ namespace ProjectB
                     int rowIndex = 0;
                     foreach (DataGridViewRow dgvRow in studentdata.Rows)
                     {
-                        if (dgvRow.Cells[9].FormattedValue.ToString() == "5")
+                        if (dgvRow.Cells[6].FormattedValue.ToString() == "5")
                         // Here I'd update the row (at this point I already have the row index)
                         {
                             dgvRow.Cells[0].Value = "Active";
                         }
-                        if (dgvRow.Cells[9].FormattedValue.ToString() == "6")
+                        if (dgvRow.Cells[6].FormattedValue.ToString() == "6")
                         {
                             dgvRow.Cells[0].Value = "InActive";
                         }
@@ -51,7 +59,7 @@ namespace ProjectB
 
                     }
                     //studentdata.Columns.Add(btn);
-                    studentdata.Columns.RemoveAt(9);
+                    studentdata.Columns.RemoveAt(6);
                     studentdata.Columns["txt_status"].DisplayIndex = studentdata.ColumnCount - 1;
                     studentdata.Columns["edit"].DisplayIndex = studentdata.ColumnCount - 1;
                     studentdata.Columns["btn_del"].DisplayIndex = studentdata.ColumnCount - 1;
@@ -66,6 +74,11 @@ namespace ProjectB
             }
         }
 
+        /// <summary>
+        /// Load the student list in datagrid view obtain from listofstudent function from database connection class
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void studentlist_Load(object sender, EventArgs e)
         {
             //DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
@@ -82,12 +95,12 @@ namespace ProjectB
             int rowIndex = 0;
             foreach (DataGridViewRow dgvRow in studentdata.Rows)
             {
-                if (dgvRow.Cells[9].FormattedValue.ToString() == "5")
+                if (dgvRow.Cells[6].FormattedValue.ToString() == "5")
                 // Here I'd update the row (at this point I already have the row index)
                 {
                     dgvRow.Cells[0].Value = "Active" ;
                 }
-                if (dgvRow.Cells[9].FormattedValue.ToString() == "6")
+                if (dgvRow.Cells[6].FormattedValue.ToString() == "6")
                 {
                     dgvRow.Cells[0].Value ="InActive";
                 }
@@ -95,7 +108,7 @@ namespace ProjectB
                 
             }
             //studentdata.Columns.Add(btn);
-            studentdata.Columns.RemoveAt(9);
+            studentdata.Columns.RemoveAt(6);
             studentdata.Columns["txt_status"].DisplayIndex = studentdata.ColumnCount - 1;
             studentdata.Columns["edit"].DisplayIndex = studentdata.ColumnCount - 1;
             studentdata.Columns["btn_del"].DisplayIndex = studentdata.ColumnCount - 1;
@@ -106,6 +119,11 @@ namespace ProjectB
 
         }
 
+        /// <summary>
+        /// Function load other forms on the click of buttons
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnregister_Click(object sender, EventArgs e)
         {
 

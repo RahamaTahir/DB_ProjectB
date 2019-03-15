@@ -15,6 +15,7 @@ namespace ProjectB
         public Main_Screen()
         {
             InitializeComponent();
+            //Connection build here
             databaseconnection.get_instance().connectionstring = "Data Source=HAIER-PC;Initial Catalog=ProjectB;Integrated Security=True";
             try
             {

@@ -18,10 +18,18 @@ namespace ProjectB
             InitializeComponent();
             
         }
-
+        
+        //Create the student type object to access it any where 
         addstudent student = new addstudent();
+
+        //to handle the edit and create function
         bool n = true;
 
+        /// <summary>
+        /// It create and update the student according to bool flag value
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSregister_Click_1(object sender, EventArgs e)
         {
 
@@ -30,7 +38,7 @@ namespace ProjectB
                 int current_status;
                 if (!n)
                 {
-                    student.Firstname = txtSFname.Text;
+                    student.FirstName = txtSFname.Text;
                     student.Lastname = txtSLname.Text;
                     student.Registration_no = txtSregno.Text;
                     student.Email= txtSEmail.Text;
@@ -42,7 +50,7 @@ namespace ProjectB
                         {
                             current_status = Convert.ToInt32(status[0]);
                             student.Status = current_status;
-                            string cmd = $"INSERT INTO Student(FirstName,LastName,Contact,Email,RegistrationNumber,Status) VALUES('{student.Firstname}','{student.Lastname}','{student.Contact}','{student.Email}','{student.Registration_no}','{student.Status}')";
+                            string cmd = $"INSERT INTO Student(FirstName,LastName,Contact,Email,RegistrationNumber,Status) VALUES('{student.FirstName}','{student.Lastname}','{student.Contact}','{student.Email}','{student.Registration_no}','{student.Status}')";
                             int rows = databaseconnection.get_instance().Executequery(cmd);
                             MessageBox.Show(String.Format("{0} rows affected", rows));
                             
@@ -83,6 +91,11 @@ namespace ProjectB
 
         }
 
+        /// <summary>
+        /// It automatically set the text boxes Text if it opens to update the student
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SRfrm_Load(object sender, EventArgs e)
         {
             string cmd = "SELECT * FROM Student";
@@ -92,7 +105,7 @@ namespace ProjectB
                 {
                     if (std.Id == studentlist.C_Id)
                     {
-                        txtSFname.Text = std.Firstname;
+                        txtSFname.Text = std.FirstName;
                         txtSLname.Text = std.Lastname;
                         txtSEmail.Text = std.Email;
                         txtSregno.Text = std.Registration_no;
@@ -115,6 +128,11 @@ namespace ProjectB
             }
         }
         
+        /// <summary>
+        /// button click functions to open other forms
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnregister_Click(object sender, EventArgs e)
         {
             this.Show();

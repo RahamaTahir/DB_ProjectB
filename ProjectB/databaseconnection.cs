@@ -47,6 +47,11 @@ namespace ProjectB
             }
 
 
+        /// <summary>
+        /// This function retrieve the list of rubric levels from database
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <returns></returns>
         public List<levelrubrics> Listoflevels(string commandText)
         {
             connection = Getconnection();
@@ -66,7 +71,11 @@ namespace ProjectB
             return level1;
         }
 
-
+        /// <summary>
+        /// This function retrieve the list of Students levels from database
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <returns></returns>
         public List<addstudent> Listofstudents(string commandText)
             {
                 connection = Getconnection();
@@ -78,7 +87,7 @@ namespace ProjectB
                     
                     addstudent student = new addstudent();
                     student.Id = Convert.ToInt32(reader.GetValue(0));
-                    student.Firstname = reader.GetString(1);
+                    student.FirstName = reader.GetString(1);
                     student.Lastname = reader.GetString(2);
                     student.Contact = reader.GetString(3);
                     student.Email = reader.GetString(4);
@@ -96,6 +105,11 @@ namespace ProjectB
                 return student_list;
             }
 
+        /// <summary>
+        /// This function retrieve the list of Clos levels from database
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <returns></returns>
         public List<Clo> ListofClo(string commandText)
         {
             connection = Getconnection();
@@ -116,6 +130,11 @@ namespace ProjectB
             return clo_list;
         }
 
+        /// <summary>
+        /// This function retrieve the list of rubrics from database
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <returns></returns>
         public List<Rubricaddclass> Listofrubrics(string commandText)
         {
             connection = Getconnection();
