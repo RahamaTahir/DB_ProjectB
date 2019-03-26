@@ -31,6 +31,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
             this.datarubric = new System.Windows.Forms.DataGridView();
+            this.btn_RubricDel = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btn_updaterubric = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btn_rubriclevel = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel14 = new System.Windows.Forms.Panel();
             this.clonamelbl = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
@@ -59,9 +62,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_RubricDel = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btn_updaterubric = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btn_rubriclevel = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datarubric)).BeginInit();
@@ -116,6 +117,27 @@
             this.datarubric.Size = new System.Drawing.Size(600, 348);
             this.datarubric.TabIndex = 0;
             this.datarubric.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // btn_RubricDel
+            // 
+            this.btn_RubricDel.HeaderText = "Delete Rubric";
+            this.btn_RubricDel.Name = "btn_RubricDel";
+            this.btn_RubricDel.Text = "Delete";
+            this.btn_RubricDel.UseColumnTextForButtonValue = true;
+            // 
+            // btn_updaterubric
+            // 
+            this.btn_updaterubric.HeaderText = "Update Rubric";
+            this.btn_updaterubric.Name = "btn_updaterubric";
+            this.btn_updaterubric.Text = "Update";
+            this.btn_updaterubric.UseColumnTextForButtonValue = true;
+            // 
+            // btn_rubriclevel
+            // 
+            this.btn_rubriclevel.HeaderText = "Manage Level";
+            this.btn_rubriclevel.Name = "btn_rubriclevel";
+            this.btn_rubriclevel.Text = "Manage ";
+            this.btn_rubriclevel.UseColumnTextForButtonValue = true;
             // 
             // panel14
             // 
@@ -260,6 +282,7 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.button2);
             this.panel8.Controls.Add(this.button1);
             this.panel8.Controls.Add(this.btnStdList);
             this.panel8.Controls.Add(this.btnAddclo);
@@ -406,26 +429,16 @@
             this.label2.Text = "Manage Rubric(s)";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btn_RubricDel
+            // button2
             // 
-            this.btn_RubricDel.HeaderText = "Delete Rubric";
-            this.btn_RubricDel.Name = "btn_RubricDel";
-            this.btn_RubricDel.Text = "Delete";
-            this.btn_RubricDel.UseColumnTextForButtonValue = true;
-            // 
-            // btn_updaterubric
-            // 
-            this.btn_updaterubric.HeaderText = "Update Rubric";
-            this.btn_updaterubric.Name = "btn_updaterubric";
-            this.btn_updaterubric.Text = "Update";
-            this.btn_updaterubric.UseColumnTextForButtonValue = true;
-            // 
-            // btn_rubriclevel
-            // 
-            this.btn_rubriclevel.HeaderText = "Manage Level";
-            this.btn_rubriclevel.Name = "btn_rubriclevel";
-            this.btn_rubriclevel.Text = "Manage ";
-            this.btn_rubriclevel.UseColumnTextForButtonValue = true;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.Location = new System.Drawing.Point(0, 127);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(198, 31);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Take Attendence ";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // addrubric
             // 
@@ -493,5 +506,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn btn_RubricDel;
         private System.Windows.Forms.DataGridViewButtonColumn btn_updaterubric;
         private System.Windows.Forms.DataGridViewButtonColumn btn_rubriclevel;
+        private System.Windows.Forms.Button button2;
     }
 }

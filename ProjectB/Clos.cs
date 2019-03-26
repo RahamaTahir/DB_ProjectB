@@ -213,5 +213,13 @@ namespace ProjectB
             h.Show();
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            attendence h = new attendence();
+            this.Hide();
+            h.Show();
+
+        }
     }
 }

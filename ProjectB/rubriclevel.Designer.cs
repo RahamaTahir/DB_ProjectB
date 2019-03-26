@@ -40,7 +40,7 @@
             this.btnregister = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.txtML = new System.Windows.Forms.TextBox();
+            this.txtML = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.txtleveldetails = new System.Windows.Forms.RichTextBox();
@@ -58,6 +58,7 @@
             this.datalevel = new System.Windows.Forms.DataGridView();
             this.btn_levelDel = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btn_updatelevel = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -127,6 +128,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btnStdList);
             this.panel2.Controls.Add(this.btnAddclo);
@@ -136,6 +138,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 417);
             this.panel2.TabIndex = 3;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button1
             // 
@@ -206,10 +209,17 @@
             // txtML
             // 
             this.txtML.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtML.FormattingEnabled = true;
+            this.txtML.IntegralHeight = false;
+            this.txtML.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            ""});
             this.txtML.Location = new System.Drawing.Point(205, 0);
-            this.txtML.Multiline = true;
             this.txtML.Name = "txtML";
-            this.txtML.Size = new System.Drawing.Size(349, 37);
+            this.txtML.Size = new System.Drawing.Size(349, 21);
             this.txtML.TabIndex = 3;
             // 
             // label4
@@ -380,6 +390,17 @@
             this.btn_updatelevel.Text = "Update";
             this.btn_updatelevel.UseColumnTextForButtonValue = true;
             // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.Location = new System.Drawing.Point(0, 127);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(198, 31);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Take Attendence ";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // rubriclevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,7 +420,6 @@
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
@@ -441,7 +461,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtML;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox txtML;
+        private System.Windows.Forms.Button button2;
     }
 }

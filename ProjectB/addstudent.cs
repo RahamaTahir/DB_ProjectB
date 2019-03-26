@@ -109,7 +109,7 @@ namespace ProjectB
                     {
                         if (!char.IsDigit(c))
                         {
-                            throw new Exception("CNIC should only contain digits");
+                            throw new Exception("Contact should only contain digits");
                         }
                     }
                     flag = true;

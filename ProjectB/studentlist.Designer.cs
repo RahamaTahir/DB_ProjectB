@@ -38,11 +38,12 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnStdList = new System.Windows.Forms.Button();
             this.btnAddclo = new System.Windows.Forms.Button();
             this.btnregister = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.studentdata)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -138,6 +139,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btnStdList);
             this.panel2.Controls.Add(this.btnAddclo);
@@ -147,6 +149,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 371);
             this.panel2.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Location = new System.Drawing.Point(0, 97);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 30);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Manage Rubric & Rubric Level";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnStdList
             // 
@@ -190,16 +203,16 @@
             this.panel3.Size = new System.Drawing.Size(600, 371);
             this.panel3.TabIndex = 4;
             // 
-            // button1
+            // button2
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Location = new System.Drawing.Point(0, 97);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 30);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Manage Rubric & Rubric Level";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.Location = new System.Drawing.Point(0, 127);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(200, 31);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Take Attendence ";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // studentlist
             // 
@@ -239,5 +252,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn btn_del;
         private System.Windows.Forms.DataGridViewButtonColumn edit;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

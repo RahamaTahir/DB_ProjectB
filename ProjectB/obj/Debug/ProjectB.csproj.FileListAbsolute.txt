@@ -1,20 +1,11 @@
-R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\bin\Debug\ProjectB.exe.config
-R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\bin\Debug\ProjectB.exe
-R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\bin\Debug\ProjectB.pdb
-R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\obj\Debug\ProjectB.csprojAssemblyReference.cache
-R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\obj\Debug\ProjectB.SRfrm.resources
-R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\obj\Debug\ProjectB.Properties.Resources.resources
-R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.GenerateResource.cache
-R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\obj\Debug\ProjectB.csproj.CoreCompileInputs.cache
-R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\obj\Debug\ProjectB.exe
-R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\obj\Debug\ProjectB.pdb
-R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\obj\Debug\ProjectB.studentlist.resources
-R:\Semester 6 2k19\DBMS\Lab\project\ProjectB\ProjectB\obj\Debug\ProjectB.Main_Screen.resources
 C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\bin\Debug\ProjectB.exe.config
 C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\bin\Debug\ProjectB.exe
 C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\bin\Debug\ProjectB.pdb
 C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\obj\Debug\ProjectB.csprojAssemblyReference.cache
+C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\obj\Debug\ProjectB.addrubric.resources
+C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\obj\Debug\ProjectB.Clos.resources
 C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\obj\Debug\ProjectB.Main_Screen.resources
+C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\obj\Debug\ProjectB.rubriclevel.resources
 C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\obj\Debug\ProjectB.SRfrm.resources
 C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\obj\Debug\ProjectB.Properties.Resources.resources
 C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\obj\Debug\ProjectB.studentlist.resources
@@ -22,19 +13,4 @@ C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\obj\Debug\ProjectB
 C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\obj\Debug\ProjectB.csproj.CoreCompileInputs.cache
 C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\obj\Debug\ProjectB.exe
 C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\obj\Debug\ProjectB.pdb
-C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\obj\Debug\ProjectB.Clos.resources
-C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB - Copy\ProjectB\bin\Debug\ProjectB.exe.config
-C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB - Copy\ProjectB\bin\Debug\ProjectB.exe
-C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB - Copy\ProjectB\bin\Debug\ProjectB.pdb
-C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB - Copy\ProjectB\obj\Debug\ProjectB.csprojAssemblyReference.cache
-C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB - Copy\ProjectB\obj\Debug\ProjectB.Clos.resources
-C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB - Copy\ProjectB\obj\Debug\ProjectB.Main_Screen.resources
-C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB - Copy\ProjectB\obj\Debug\ProjectB.SRfrm.resources
-C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB - Copy\ProjectB\obj\Debug\ProjectB.Properties.Resources.resources
-C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB - Copy\ProjectB\obj\Debug\ProjectB.studentlist.resources
-C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB - Copy\ProjectB\obj\Debug\ProjectB.csproj.GenerateResource.cache
-C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB - Copy\ProjectB\obj\Debug\ProjectB.csproj.CoreCompileInputs.cache
-C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB - Copy\ProjectB\obj\Debug\ProjectB.exe
-C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB - Copy\ProjectB\obj\Debug\ProjectB.pdb
-C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\obj\Debug\ProjectB.addrubric.resources
-C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\obj\Debug\ProjectB.rubriclevel.resources
+C:\Users\Rahama Tahir\Desktop\Db_project\DB_ProjectB\ProjectB\obj\Debug\ProjectB.attendence.resources

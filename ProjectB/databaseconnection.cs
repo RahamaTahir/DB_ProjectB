@@ -105,6 +105,34 @@ namespace ProjectB
                 return student_list;
             }
 
+        public List<addstudent> ListofActivestudents(string commandText)
+        {
+            connection = Getconnection();
+            SqlCommand cmd = new SqlCommand(commandText, connection);
+            List<addstudent> student_list = new List<addstudent>();
+            var reader = Getdata(commandText);
+            while (reader.Read())
+            {
+                if (reader.GetInt32(6) == 5)
+                {
+                    addstudent student = new addstudent();
+                    student.Id = Convert.ToInt32(reader.GetValue(0));
+                    student.FirstName = reader.GetString(1);
+                    student.Lastname = reader.GetString(2);
+                    student.Contact = reader.GetString(3);
+                    student.Email = reader.GetString(4);
+                    student.Registration_no = reader.GetString(5);
+                    if (reader.GetInt32(6) == 5)
+                    {
+                        student.Status = 5;
+                    }
+                    student_list.Add(student);
+                }
+                
+            }
+            return student_list;
+        }
+
         /// <summary>
         /// This function retrieve the list of Clos levels from database
         /// </summary>
