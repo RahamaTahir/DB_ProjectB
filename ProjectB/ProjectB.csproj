@@ -53,6 +53,21 @@
     <Compile Include="addrubric.Designer.cs">
       <DependentUpon>addrubric.cs</DependentUpon>
     </Compile>
+    <Compile Include="Assessment.cs" />
+    <Compile Include="Assessmentclass.cs" />
+    <Compile Include="AssessmentComonent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssessmentComonent.Designer.cs">
+      <DependentUpon>AssessmentComonent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Assessmentcomponent.cs" />
+    <Compile Include="assessmentfrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="assessmentfrm.Designer.cs">
+      <DependentUpon>assessmentfrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="attendence.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +98,12 @@
     <Compile Include="rubriclevel.Designer.cs">
       <DependentUpon>rubriclevel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Showattendence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Showattendence.Designer.cs">
+      <DependentUpon>Showattendence.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sregister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +122,12 @@
     <EmbeddedResource Include="addrubric.resx">
       <DependentUpon>addrubric.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AssessmentComonent.resx">
+      <DependentUpon>AssessmentComonent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="assessmentfrm.resx">
+      <DependentUpon>assessmentfrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="attendence.resx">
       <DependentUpon>attendence.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rubriclevel.resx">
       <DependentUpon>rubriclevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Showattendence.resx">
+      <DependentUpon>Showattendence.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sregister.resx">
       <DependentUpon>Sregister.cs</DependentUpon>

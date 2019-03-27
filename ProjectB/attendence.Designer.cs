@@ -34,25 +34,27 @@
             this.btn_back = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnStdList = new System.Windows.Forms.Button();
             this.btnAddclo = new System.Windows.Forms.Button();
             this.btnregister = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.attendencedata = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnsubmit = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnsubmit = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.attendencedata = new System.Windows.Forms.DataGridView();
             this.present = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.attendencedata)).BeginInit();
-            this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.attendencedata)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -109,6 +111,8 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.button4);
+            this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.btnStdList);
@@ -120,6 +124,28 @@
             this.panel3.Size = new System.Drawing.Size(200, 365);
             this.panel3.TabIndex = 4;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.Location = new System.Drawing.Point(0, 158);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(198, 31);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Attendance List";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.Location = new System.Drawing.Point(0, 127);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(198, 31);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Take Attendence ";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -175,37 +201,14 @@
             this.panel4.Size = new System.Drawing.Size(600, 365);
             this.panel4.TabIndex = 2;
             // 
-            // attendencedata
+            // panel6
             // 
-            this.attendencedata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.attendencedata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.present});
-            this.attendencedata.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.attendencedata.Location = new System.Drawing.Point(0, 0);
-            this.attendencedata.Name = "attendencedata";
-            this.attendencedata.Size = new System.Drawing.Size(600, 239);
-            this.attendencedata.TabIndex = 2;
-            this.attendencedata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentdata_CellContentClick);
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.Location = new System.Drawing.Point(0, 127);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(198, 31);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Take Attendence ";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.attendencedata);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(600, 239);
-            this.panel5.TabIndex = 3;
+            this.panel6.Controls.Add(this.btnsubmit);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel6.Location = new System.Drawing.Point(400, 239);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(200, 126);
+            this.panel6.TabIndex = 5;
             // 
             // btnsubmit
             // 
@@ -217,14 +220,26 @@
             this.btnsubmit.UseVisualStyleBackColor = true;
             this.btnsubmit.Click += new System.EventHandler(this.btnsubmit_Click);
             // 
-            // panel6
+            // panel5
             // 
-            this.panel6.Controls.Add(this.btnsubmit);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(400, 239);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(200, 126);
-            this.panel6.TabIndex = 5;
+            this.panel5.Controls.Add(this.attendencedata);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(600, 239);
+            this.panel5.TabIndex = 3;
+            // 
+            // attendencedata
+            // 
+            this.attendencedata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.attendencedata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.present});
+            this.attendencedata.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.attendencedata.Location = new System.Drawing.Point(0, 0);
+            this.attendencedata.Name = "attendencedata";
+            this.attendencedata.Size = new System.Drawing.Size(600, 239);
+            this.attendencedata.TabIndex = 2;
+            this.attendencedata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentdata_CellContentClick);
             // 
             // present
             // 
@@ -239,6 +254,17 @@
             this.present.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.present.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.present.Width = 150;
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.Location = new System.Drawing.Point(0, 189);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(198, 31);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "Manage Assessment(s)";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // attendence
             // 
@@ -256,9 +282,9 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.attendencedata)).EndInit();
-            this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.attendencedata)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -282,5 +308,7 @@
         private System.Windows.Forms.Button btnsubmit;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridViewComboBoxColumn present;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

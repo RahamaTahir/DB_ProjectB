@@ -32,6 +32,8 @@ namespace ProjectB
             C_Id = Convert.ToInt32(this.studentdata.Rows[e.RowIndex].Cells[3].Value);
             if (studentdata.Columns[e.ColumnIndex].Name == "btn_del")
             {
+                string cmd1 = @"delete from StudentAttendance where StudentId=" + C_Id;
+                int j = databaseconnection.get_instance().Executequery(cmd1);
                 string cmd = @"delete from Student where Id=" + C_Id; ;
                 int i = databaseconnection.get_instance().Executequery(cmd);
                 if (i > 0)
@@ -81,11 +83,7 @@ namespace ProjectB
         /// <param name="e"></param>
         private void studentlist_Load(object sender, EventArgs e)
         {
-            //DataGridViewButtonColumn btn = new DataGridViewButtonColumn();
-            //btn.Name = "Del";
-            ///btn.Text = "Delete";
-            //btn.UseColumnTextForButtonValue = false;
-
+            
             string cmd = "SELECT * FROM Student";
             BindingSource s = new BindingSource();
             s.DataSource = databaseconnection.get_instance().Listofstudents(cmd);
@@ -167,6 +165,21 @@ namespace ProjectB
             this.Hide();
             h.Show();
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Showattendence y = new Showattendence();
+            this.Hide();
+            y.Show();
+        }
+        
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            assessmentfrm l = new assessmentfrm();
+            this.Hide();
+            l.Show();
         }
     }
 }

@@ -78,24 +78,23 @@ namespace ProjectB
         }
 
         private void attendence_Load(object sender, EventArgs e)
-        {
-            string cmd = "SELECT * FROM Student";
-            BindingSource s = new BindingSource();
-            s.DataSource = databaseconnection.get_instance().ListofActivestudents(cmd);
-            attendencedata.DataSource = s;
+        {           string cmd = "SELECT * FROM Student";
+                    BindingSource s = new BindingSource();
+                    s.DataSource = databaseconnection.get_instance().ListofActivestudents(cmd);
+                    attendencedata.DataSource = s;
 
-            attendencedata.Columns.RemoveAt(2);
-            attendencedata.Columns.RemoveAt(3);
-            attendencedata.Columns.RemoveAt(5);
+                    attendencedata.Columns.RemoveAt(2);
+                    attendencedata.Columns.RemoveAt(3);
+                    attendencedata.Columns.RemoveAt(5);
 
-            //studentdata.Columns.RemoveAt(0);
-            attendencedata.Columns["present"].DisplayIndex = attendencedata.ColumnCount - 1;
-
+                    //studentdata.Columns.RemoveAt(0);
+                    attendencedata.Columns["present"].DisplayIndex = attendencedata.ColumnCount - 1;
 
         }
 
 
-        
+
+        Showattendence k = new Showattendence();
         private void btnsubmit_Click(object sender, EventArgs e)
         {
 
@@ -104,8 +103,8 @@ namespace ProjectB
                 string cmd = $"INSERT INTO ClassAttendance(AttendanceDate) VALUES('{DateTime.Now.Date}')";
                 int rows = databaseconnection.get_instance().Executequery(cmd);
                 //SqlDataReader student1 = databaseconnection.get_instance().Getdata("SELECT * FROM Student");
-                
-                for (int x=0; x< attendencedata.Rows.Count-1; x++)
+
+                for (int x = 0; x < attendencedata.Rows.Count - 1; x++)
                 {
                     SqlDataReader reader1 = databaseconnection.get_instance().Getdata(string.Format("SELECT * FROM Student"));
 
@@ -140,16 +139,31 @@ namespace ProjectB
                                 }
                             }
                         }
-                        
+
                     }
                 }
                 MessageBox.Show(String.Format("{0} rows affected", rows));
+                this.Hide();
+                k.Show();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            k.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            assessmentfrm k = new assessmentfrm();
+            this.Hide();
+            k.Show();
         }
     }
 }

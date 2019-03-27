@@ -94,6 +94,7 @@ namespace ProjectB
             
             if (clodata.Columns[e.ColumnIndex].Name == "btn_del1")
             {
+                
                 int temp; 
                 SqlDataReader reader1 = databaseconnection.get_instance().Getdata(string.Format("SELECT * FROM Rubric Where CloId = '{0}'",Clo_Id));
                 if (reader1 != null)
@@ -101,6 +102,16 @@ namespace ProjectB
                     while (reader1.Read())
                     {
                         temp = Convert.ToInt32(reader1.GetValue(0));
+                        SqlDataReader reader = databaseconnection.get_instance().Getdata(string.Format("SELECT * FROM AssessmentComponent WHERE RubricId='{0}'", temp));
+                        if (reader != null)
+                        {
+                            while (reader.Read())
+                            {
+                                string cmd5 = @"delete from AssessmentComponent where RubricId=" + temp; ;
+                                int y = databaseconnection.get_instance().Executequery(cmd5);
+
+                            }
+                        }
                         SqlDataReader reader2 = databaseconnection.get_instance().Getdata(string.Format("SELECT * FROM RubricLevel Where RubricId = '{0}'", temp));
                         if (reader2 != null)
                         {
@@ -120,6 +131,7 @@ namespace ProjectB
                 int i = databaseconnection.get_instance().Executequery(cmd);
                 if (i > 0)
                 {
+                    MessageBox.Show("Assessment Component Related to Rubric also Deleted.");
                     MessageBox.Show("Clo and Related Rubric(s) and Rubric Level(s) Deleted.");
                     string cmd1 = "SELECT * FROM Clo";
                     BindingSource j = new BindingSource();
@@ -220,6 +232,20 @@ namespace ProjectB
             this.Hide();
             h.Show();
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Showattendence j = new Showattendence();
+            this.Hide();
+            j.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            assessmentfrm l = new assessmentfrm();
+            this.Hide();
+            l.Show();
         }
     }
 }

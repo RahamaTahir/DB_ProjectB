@@ -58,6 +58,33 @@ namespace ProjectB
                 BindingSource s = new BindingSource();
                 s.DataSource = databaseconnection.get_instance().Listoflevels(cmd);
                 datalevel.DataSource = s;
+
+                int rowIndex = 0;
+                foreach (DataGridViewRow dgvRow in datalevel.Rows)
+                {
+                    if (dgvRow.Cells[5].FormattedValue.ToString() == "1")
+                    // Here I'd update the row (at this point I already have the row index)
+                    {
+                        dgvRow.Cells[0].Value = "Unsatisfactory";
+                    }
+                    if (dgvRow.Cells[5].FormattedValue.ToString() == "2")
+                    {
+                        dgvRow.Cells[0].Value = "Fair";
+                    }
+                    if (dgvRow.Cells[5].FormattedValue.ToString() == "3")
+                    {
+                        dgvRow.Cells[0].Value = "Good";
+                    }
+                    if (dgvRow.Cells[5].FormattedValue.ToString() == "4")
+                    {
+                        dgvRow.Cells[0].Value = "Exceptional";
+                    }
+                    rowIndex++;
+
+                }
+                datalevel.Columns.RemoveAt(5);
+                datalevel.Columns["degree"].DisplayIndex = datalevel.ColumnCount - 2;
+
                 datalevel.Columns["btn_updatelevel"].DisplayIndex = datalevel.ColumnCount - 1;
                 datalevel.Columns["btn_levelDel"].DisplayIndex = datalevel.ColumnCount - 1;
 
@@ -79,7 +106,7 @@ namespace ProjectB
         /// <param name="e"></param>
         private void datalevel_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            L_id = Convert.ToInt32(this.datalevel.Rows[e.RowIndex].Cells[2].Value);
+            L_id = Convert.ToInt32(this.datalevel.Rows[e.RowIndex].Cells[3].Value);
 
             //On the click of update button
             if (datalevel.Columns[e.ColumnIndex].Name == "btn_updatelevel")
@@ -111,6 +138,33 @@ namespace ProjectB
                     BindingSource s = new BindingSource();
                     s.DataSource = databaseconnection.get_instance().Listoflevels(cmd1);
                     datalevel.DataSource = s;
+
+
+                    int rowIndex = 0;
+                    foreach (DataGridViewRow dgvRow in datalevel.Rows)
+                    {
+                        if (dgvRow.Cells[5].FormattedValue.ToString() == "1")
+                        // Here I'd update the row (at this point I already have the row index)
+                        {
+                            dgvRow.Cells[0].Value = "Unsatisfactory";
+                        }
+                        if (dgvRow.Cells[5].FormattedValue.ToString() == "2")
+                        {
+                            dgvRow.Cells[0].Value = "Fair";
+                        }
+                        if (dgvRow.Cells[5].FormattedValue.ToString() == "3")
+                        {
+                            dgvRow.Cells[0].Value = "Good";
+                        }
+                        if (dgvRow.Cells[5].FormattedValue.ToString() == "4")
+                        {
+                            dgvRow.Cells[0].Value = "Exceptional";
+                        }
+                        rowIndex++;
+                    }
+                    datalevel.Columns.RemoveAt(5);
+                    datalevel.Columns["degree"].DisplayIndex = datalevel.ColumnCount - 2;
+
                     datalevel.Columns["btn_updatelevel"].DisplayIndex = datalevel.ColumnCount - 1;
                     datalevel.Columns["btn_levelDel"].DisplayIndex = datalevel.ColumnCount - 1;
 
@@ -141,6 +195,32 @@ namespace ProjectB
             BindingSource s = new BindingSource();
             s.DataSource = databaseconnection.get_instance().Listoflevels(cmd);
             datalevel.DataSource = s;
+             
+            int rowIndex = 0;
+            foreach (DataGridViewRow dgvRow in datalevel.Rows)
+            {
+                if (dgvRow.Cells[5].FormattedValue.ToString() == "1")
+                // Here I'd update the row (at this point I already have the row index)
+                {
+                    dgvRow.Cells[0].Value = "Unsatisfactory";
+                }
+                if (dgvRow.Cells[5].FormattedValue.ToString() == "2")
+                {
+                    dgvRow.Cells[0].Value = "Fair";
+                }
+                if (dgvRow.Cells[5].FormattedValue.ToString() == "3")
+                {
+                    dgvRow.Cells[0].Value = "Good";
+                }
+                if (dgvRow.Cells[5].FormattedValue.ToString() == "4")
+                {
+                    dgvRow.Cells[0].Value = "Exceptional";
+                }
+                rowIndex++;
+            }
+            datalevel.Columns.RemoveAt(5);
+            datalevel.Columns["degree"].DisplayIndex = datalevel.ColumnCount - 2;
+
             datalevel.Columns["btn_updatelevel"].DisplayIndex = datalevel.ColumnCount - 1;
             datalevel.Columns["btn_levelDel"].DisplayIndex = datalevel.ColumnCount - 1;
 
@@ -203,6 +283,20 @@ namespace ProjectB
             this.Hide();
             h.Show();
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Showattendence y = new Showattendence();
+            this.Hide();
+            y.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            assessmentfrm l = new assessmentfrm();
+            this.Hide();
+            l.Show();
         }
     }
 }

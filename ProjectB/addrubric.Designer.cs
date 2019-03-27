@@ -49,6 +49,7 @@
             this.btnrubricadd = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnStdList = new System.Windows.Forms.Button();
             this.btnAddclo = new System.Windows.Forms.Button();
@@ -62,7 +63,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datarubric)).BeginInit();
@@ -282,6 +284,8 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.button3);
+            this.panel8.Controls.Add(this.button5);
             this.panel8.Controls.Add(this.button2);
             this.panel8.Controls.Add(this.button1);
             this.panel8.Controls.Add(this.btnStdList);
@@ -292,6 +296,17 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(200, 463);
             this.panel8.TabIndex = 7;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.Location = new System.Drawing.Point(0, 127);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(198, 31);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Take Attendence ";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -429,16 +444,27 @@
             this.label2.Text = "Manage Rubric(s)";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button2
+            // button3
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.Location = new System.Drawing.Point(0, 127);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(198, 31);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Take Attendence ";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.Location = new System.Drawing.Point(0, 189);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(198, 31);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Manage Assessment(s)";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.Location = new System.Drawing.Point(0, 158);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(198, 31);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Attendance List";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // addrubric
             // 
@@ -507,5 +533,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn btn_updaterubric;
         private System.Windows.Forms.DataGridViewButtonColumn btn_rubriclevel;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button5;
     }
 }

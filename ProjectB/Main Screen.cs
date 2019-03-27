@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -68,9 +69,56 @@ namespace ProjectB
 
         private void button2_Click(object sender, EventArgs e)
         {
-            attendence h = new attendence();
+            bool y = false;
+            SqlDataReader date1 = databaseconnection.get_instance().Getdata(string.Format("SELECT * FROM ClassAttendance"));
+            while (date1.Read())
+            {
+                if (date1[1].ToString() == DateTime.Now.Date.ToString())
+                {
+                    MessageBox.Show("Today Attendence has been taken!");
+                    this.Hide();
+                    Main_Screen h = new Main_Screen();
+                    h.Show();
+                    y =true;
+                    break;
+                }
+            
+            }
+            if (y == false)
+            {
+
+                attendence h = new attendence();
+                this.Hide();
+                h.Show();
+
+            }
+
+        }
+
+            private void panel6_Paint(object sender, PaintEventArgs e)
+            {
+
+            }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Showattendence k = new Showattendence();
             this.Hide();
-            h.Show();
+            k.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            assessmentfrm s = new assessmentfrm();
+            this.Hide();
+            s.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AssessmentComonent j = new AssessmentComonent();
+            this.Hide();
+            j.Show();
         }
     }
-}
+    }

@@ -34,6 +34,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnStdList = new System.Windows.Forms.Button();
             this.btnAddclo = new System.Windows.Forms.Button();
@@ -56,9 +57,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.datalevel = new System.Windows.Forms.DataGridView();
+            this.degree = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_levelDel = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btn_updatelevel = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -96,7 +99,7 @@
             // 
             // btn_back
             // 
-            this.btn_back.Location = new System.Drawing.Point(105, 32);
+            this.btn_back.Location = new System.Drawing.Point(103, 34);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(146, 41);
             this.btn_back.TabIndex = 3;
@@ -128,6 +131,8 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btnStdList);
@@ -139,6 +144,17 @@
             this.panel2.Size = new System.Drawing.Size(200, 417);
             this.panel2.TabIndex = 3;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.Location = new System.Drawing.Point(0, 127);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(198, 31);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Take Attendence ";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -367,6 +383,7 @@
             // 
             this.datalevel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.datalevel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.degree,
             this.btn_levelDel,
             this.btn_updatelevel});
             this.datalevel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -375,6 +392,12 @@
             this.datalevel.Size = new System.Drawing.Size(688, 225);
             this.datalevel.TabIndex = 1;
             this.datalevel.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datalevel_CellContentClick);
+            // 
+            // degree
+            // 
+            this.degree.HeaderText = "Measurement Level";
+            this.degree.Name = "degree";
+            this.degree.Width = 150;
             // 
             // btn_levelDel
             // 
@@ -390,16 +413,27 @@
             this.btn_updatelevel.Text = "Update";
             this.btn_updatelevel.UseColumnTextForButtonValue = true;
             // 
-            // button2
+            // button4
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.Location = new System.Drawing.Point(0, 127);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(198, 31);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Take Attendence ";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.Location = new System.Drawing.Point(0, 189);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(198, 31);
+            this.button4.TabIndex = 15;
+            this.button4.Text = "Manage Assessment(s)";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.Location = new System.Drawing.Point(0, 158);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(198, 31);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "Attendance List";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // rubriclevel
             // 
@@ -445,7 +479,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Button btnrubricadd;
-        private System.Windows.Forms.RichTextBox txtleveldetails;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label lblCloname;
@@ -455,14 +488,18 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.DataGridView datalevel;
-        private System.Windows.Forms.DataGridViewButtonColumn btn_levelDel;
-        private System.Windows.Forms.DataGridViewButtonColumn btn_updatelevel;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox txtML;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox txtML;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.RichTextBox txtleveldetails;
+        private System.Windows.Forms.DataGridViewTextBoxColumn degree;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_levelDel;
+        private System.Windows.Forms.DataGridViewButtonColumn btn_updatelevel;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
     }
 }

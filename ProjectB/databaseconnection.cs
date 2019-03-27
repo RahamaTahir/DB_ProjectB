@@ -180,6 +180,48 @@ namespace ProjectB
             return rubric;
         }
 
+        public List<Assessmentcomponent> Listofcomponents(string commandText)
+        {
+            connection = Getconnection();
+            SqlCommand cmd = new SqlCommand(commandText, connection);
+            List<Assessmentcomponent> component = new List<Assessmentcomponent>();
+            var reader = Getdata(commandText);
+            while (reader.Read())
+            {
+                Assessmentcomponent j = new Assessmentcomponent();
+                j.Id = Convert.ToInt32(reader.GetValue(0));
+                j.Name = reader.GetValue(1).ToString();
+                j.RubricId =Convert.ToInt32( reader.GetValue(2));
+                j.TotalMarks = Convert.ToInt32(reader.GetValue(3));
+                j.AssessmentId = Convert.ToInt32(reader.GetValue(6));
+                j.DateCreated = Convert.ToDateTime(reader[4]).Date;
+                j.DateUpdated = Convert.ToDateTime(reader[5]).Date;
+                
+                component.Add(j);
+            }
+            return component;
+        }
+
+        public List<Assessmentclass> Listofassessments(string commandText)
+        {
+            connection = Getconnection();
+            SqlCommand cmd = new SqlCommand(commandText, connection);
+            List<Assessmentclass> component = new List<Assessmentclass>();
+            var reader = Getdata(commandText);
+            while (reader.Read())
+            {
+                Assessmentclass j = new Assessmentclass();
+                j.Id = Convert.ToInt32(reader.GetValue(0));
+                j.Title = reader.GetValue(1).ToString();
+                j.DateCreated = Convert.ToDateTime(reader.GetValue(2));
+                j.TotalMarks = Convert.ToInt32(reader.GetValue(3));
+                j.TotalWeightage = Convert.ToInt32(reader[4]);
+
+                component.Add(j);
+            }
+            return component;
+        }
+
         public SqlDataReader Getdata(string query)
             {
                 connection = Getconnection();

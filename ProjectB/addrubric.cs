@@ -126,8 +126,19 @@ namespace ProjectB
                 {
                     while (reader1.Read())
                     {
+                        
                         string cmd2 = @"delete from RubricLevel where RubricId=" + id; ;
                         int s = databaseconnection.get_instance().Executequery(cmd2);
+
+                    }
+                }
+                SqlDataReader reader = databaseconnection.get_instance().Getdata(string.Format("SELECT * FROM AssessmentComponent WHERE RubricId='{0}'", id));
+                if (reader != null)
+                {
+                    while (reader.Read())
+                    {
+                        string cmd5 = @"delete from AssessmentComponent where RubricId=" + id; ;
+                        int y = databaseconnection.get_instance().Executequery(cmd5);
 
                     }
                 }
@@ -135,6 +146,7 @@ namespace ProjectB
                 int i = databaseconnection.get_instance().Executequery(cmd);
                 if (i > 0)
                 {
+                    MessageBox.Show("Assessment Components Related to this Rubric are alsso deleted");
                     MessageBox.Show("Rubric and its level(s) Deleted.");
                     string cmd1 = string.Format("SELECT * FROM Rubric Where CloId={0}", Clos.Clo_Id);
 
@@ -208,6 +220,20 @@ namespace ProjectB
             this.Hide();
             h.Show();
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Showattendence i = new Showattendence();
+            this.Hide();
+            i.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            assessmentfrm k = new assessmentfrm();
+            this.Hide();
+            k.Show();
         }
     }
 }

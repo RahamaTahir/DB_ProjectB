@@ -180,5 +180,20 @@ namespace ProjectB
             h.Show();
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Showattendence y = new Showattendence();
+            this.Hide();
+            y.Show();
+        }
+        
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            assessmentfrm l = new assessmentfrm();
+            this.Hide();
+            l.Show();
+        }
     }
 }
