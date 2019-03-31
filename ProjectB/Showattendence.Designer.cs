@@ -46,13 +46,15 @@
             this.lblCloname = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnStdList = new System.Windows.Forms.Button();
             this.btnAddclo = new System.Windows.Forms.Button();
             this.btnregister = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -86,7 +88,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(546, 100);
             this.label2.TabIndex = 11;
-            this.label2.Text = "Attendence List";
+            this.label2.Text = "Attendance List";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -108,6 +110,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Bact to Main Screen";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel3
             // 
@@ -216,12 +219,12 @@
             // lblCloname
             // 
             this.lblCloname.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCloname.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCloname.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCloname.Location = new System.Drawing.Point(0, 0);
             this.lblCloname.Name = "lblCloname";
             this.lblCloname.Size = new System.Drawing.Size(139, 67);
             this.lblCloname.TabIndex = 1;
-            this.lblCloname.Text = "Attendance Date";
+            this.lblCloname.Text = "Enter Attendance Date";
             this.lblCloname.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel2
@@ -236,6 +239,8 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.button7);
+            this.panel8.Controls.Add(this.button6);
             this.panel8.Controls.Add(this.button3);
             this.panel8.Controls.Add(this.button5);
             this.panel8.Controls.Add(this.button2);
@@ -249,55 +254,16 @@
             this.panel8.Size = new System.Drawing.Size(200, 348);
             this.panel8.TabIndex = 8;
             // 
-            // button2
+            // button6
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.Location = new System.Drawing.Point(0, 127);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(198, 31);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Take Attendance ";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Location = new System.Drawing.Point(0, 97);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(198, 30);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Manage Rubric & Rubric Level";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnStdList
-            // 
-            this.btnStdList.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStdList.Location = new System.Drawing.Point(0, 66);
-            this.btnStdList.Name = "btnStdList";
-            this.btnStdList.Size = new System.Drawing.Size(198, 31);
-            this.btnStdList.TabIndex = 4;
-            this.btnStdList.Text = "View Student List";
-            this.btnStdList.UseVisualStyleBackColor = true;
-            // 
-            // btnAddclo
-            // 
-            this.btnAddclo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAddclo.Location = new System.Drawing.Point(0, 32);
-            this.btnAddclo.Name = "btnAddclo";
-            this.btnAddclo.Size = new System.Drawing.Size(198, 34);
-            this.btnAddclo.TabIndex = 5;
-            this.btnAddclo.Text = "Add CLO";
-            this.btnAddclo.UseVisualStyleBackColor = true;
-            // 
-            // btnregister
-            // 
-            this.btnregister.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnregister.Location = new System.Drawing.Point(0, 0);
-            this.btnregister.Name = "btnregister";
-            this.btnregister.Size = new System.Drawing.Size(198, 32);
-            this.btnregister.TabIndex = 3;
-            this.btnregister.Text = "Register";
-            this.btnregister.UseVisualStyleBackColor = true;
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.Location = new System.Drawing.Point(0, 220);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(198, 31);
+            this.button6.TabIndex = 16;
+            this.button6.Text = "Evaluate Assessment(s)";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button3
             // 
@@ -321,6 +287,72 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.Location = new System.Drawing.Point(0, 127);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(198, 31);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Take Attendance ";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Location = new System.Drawing.Point(0, 97);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(198, 30);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Manage Rubric & Rubric Level";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnStdList
+            // 
+            this.btnStdList.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStdList.Location = new System.Drawing.Point(0, 66);
+            this.btnStdList.Name = "btnStdList";
+            this.btnStdList.Size = new System.Drawing.Size(198, 31);
+            this.btnStdList.TabIndex = 4;
+            this.btnStdList.Text = "View Student List";
+            this.btnStdList.UseVisualStyleBackColor = true;
+            this.btnStdList.Click += new System.EventHandler(this.btnStdList_Click_1);
+            // 
+            // btnAddclo
+            // 
+            this.btnAddclo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddclo.Location = new System.Drawing.Point(0, 32);
+            this.btnAddclo.Name = "btnAddclo";
+            this.btnAddclo.Size = new System.Drawing.Size(198, 34);
+            this.btnAddclo.TabIndex = 5;
+            this.btnAddclo.Text = "Add CLO";
+            this.btnAddclo.UseVisualStyleBackColor = true;
+            this.btnAddclo.Click += new System.EventHandler(this.btnAddclo_Click_1);
+            // 
+            // btnregister
+            // 
+            this.btnregister.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnregister.Location = new System.Drawing.Point(0, 0);
+            this.btnregister.Name = "btnregister";
+            this.btnregister.Size = new System.Drawing.Size(198, 32);
+            this.btnregister.TabIndex = 3;
+            this.btnregister.Text = "Register";
+            this.btnregister.UseVisualStyleBackColor = true;
+            this.btnregister.Click += new System.EventHandler(this.btnregister_Click);
+            // 
+            // button7
+            // 
+            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button7.Location = new System.Drawing.Point(0, 251);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(198, 31);
+            this.button7.TabIndex = 17;
+            this.button7.Text = "Generate Report(s)";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // Showattendence
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,6 +362,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Showattendence";
             this.Text = "Lab Assessment Project";
+            this.Load += new System.EventHandler(this.Showattendence_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -373,5 +406,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn statusA;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }

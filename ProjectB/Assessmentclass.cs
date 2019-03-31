@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 namespace ProjectB
 {
     class Assessmentclass
+
     {
+        //attributes according to database tables
         private int id;
         private string title;
         private DateTime dateCreated;

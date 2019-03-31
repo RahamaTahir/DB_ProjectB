@@ -36,6 +36,7 @@ namespace ProjectB
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //opens the student registration form
             SRfrm x = new SRfrm();
             this.Hide();
             x.Show();
@@ -43,6 +44,7 @@ namespace ProjectB
 
         private void btnStdList_Click(object sender, EventArgs e)
         {
+            //opens the registereed Student list
             studentlist n = new studentlist();
             this.Hide();
             n.Show();
@@ -55,6 +57,7 @@ namespace ProjectB
 
         private void btnAddclo_Click(object sender, EventArgs e)
         {
+            //opens the manage Clo form
             Clos n = new Clos();
             this.Hide();
             n.Show();
@@ -62,27 +65,36 @@ namespace ProjectB
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            //opens the manage Clo form
             Clos h = new Clos();
             this.Hide();
             h.Show();
         }
 
+        /// <summary>
+        /// Opens the attendance form if attendance has taken for that date
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             bool y = false;
             SqlDataReader date1 = databaseconnection.get_instance().Getdata(string.Format("SELECT * FROM ClassAttendance"));
-            while (date1.Read())
+            if (date1 != null)
             {
-                if (date1[1].ToString() == DateTime.Now.Date.ToString())
+                while (date1.Read())
                 {
-                    MessageBox.Show("Today Attendence has been taken!");
-                    this.Hide();
-                    Main_Screen h = new Main_Screen();
-                    h.Show();
-                    y =true;
-                    break;
+                    if (date1[1].ToString() == DateTime.Now.Date.ToString())
+                    {
+                        MessageBox.Show("Today Attendence has been taken!");
+                        this.Hide();
+                        Main_Screen h = new Main_Screen();
+                        h.Show();
+                        y = true;
+                        break;
+                    }
+
                 }
-            
             }
             if (y == false)
             {
@@ -102,6 +114,7 @@ namespace ProjectB
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //show the attendance in new form for any day
             Showattendence k = new Showattendence();
             this.Hide();
             k.Show();
@@ -109,16 +122,27 @@ namespace ProjectB
 
         private void button4_Click(object sender, EventArgs e)
         {
+            //Opens the assessment manage form
             assessmentfrm s = new assessmentfrm();
             this.Hide();
             s.Show();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click_1(object sender, EventArgs e)
         {
-            AssessmentComonent j = new AssessmentComonent();
+            //opens the result calculation form of students
+            resultStudentForm j = new resultStudentForm();
             this.Hide();
             j.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //Generate Reports form open
+            pdfreport o = new pdfreport();
+            this.Hide();
+            o.Show();
+
         }
     }
     }

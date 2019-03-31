@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -65,6 +66,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btn_back = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -97,6 +99,8 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.button6);
+            this.panel4.Controls.Add(this.button5);
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.button3);
             this.panel4.Controls.Add(this.button2);
@@ -109,6 +113,17 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 401);
             this.panel4.TabIndex = 4;
+            // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.Location = new System.Drawing.Point(0, 220);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(198, 31);
+            this.button5.TabIndex = 13;
+            this.button5.Text = "Evaluate Assessment(s)";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -139,7 +154,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(198, 31);
             this.button2.TabIndex = 10;
-            this.button2.Text = "Take Attendence ";
+            this.button2.Text = "Take Attendance ";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
@@ -458,6 +473,17 @@
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click_1);
             // 
+            // button6
+            // 
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.Location = new System.Drawing.Point(0, 251);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(198, 31);
+            this.button6.TabIndex = 14;
+            this.button6.Text = "Generate Report(s)";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // assessmentfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -533,5 +559,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn addcomponent;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }

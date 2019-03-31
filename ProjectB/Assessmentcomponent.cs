@@ -8,6 +8,7 @@ namespace ProjectB
 {
     class Assessmentcomponent
     {
+        //attributes according to the database
         private int id;
         private string name;
         private int rubricId;
@@ -16,6 +17,9 @@ namespace ProjectB
         private DateTime dateUpdated;
         private int assessmentId;
 
+        /// <summary>
+        /// Getter and setters
+        /// </summary>
         public int Id { get => id; set => id = value; }
         public string Name { get => name; set => name = value; }
         public int RubricId { get => rubricId; set => rubricId = value; }

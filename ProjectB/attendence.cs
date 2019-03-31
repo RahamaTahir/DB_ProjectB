@@ -20,6 +20,7 @@ namespace ProjectB
 
         private void btnregister_Click(object sender, EventArgs e)
         {
+            //open the student registration form
             SRfrm i = new SRfrm();
             this.Hide();
             i.Show();
@@ -28,6 +29,7 @@ namespace ProjectB
 
         private void btn_back_Click(object sender, EventArgs e)
         {
+            //reloads the main screen
             Main_Screen g = new Main_Screen();
             this.Hide();
             g.Show();
@@ -35,6 +37,7 @@ namespace ProjectB
 
         private void btnStdList_Click(object sender, EventArgs e)
         {
+            //open the registered student list
             studentlist h = new studentlist();
             this.Hide();
             h.Show();
@@ -43,7 +46,7 @@ namespace ProjectB
 
         private void btnAddclo_Click(object sender, EventArgs e)
         {
-
+            //open the clo manage page
             Clos h = new Clos();
             this.Hide();
             h.Show();
@@ -52,7 +55,7 @@ namespace ProjectB
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            //Open the clo manage page
             Clos h = new Clos();
             this.Hide();
             h.Show();
@@ -61,9 +64,33 @@ namespace ProjectB
 
         private void button2_Click(object sender, EventArgs e)
         {
-            attendence h = new attendence();
-            this.Hide();
-            h.Show();
+            //Opens the attendance form if attendance has taken for that date
+            bool y = false;
+            SqlDataReader date1 = databaseconnection.get_instance().Getdata(string.Format("SELECT * FROM ClassAttendance"));
+            if (date1 != null)
+            {
+                while (date1.Read())
+                {
+                    if (date1[1].ToString() == DateTime.Now.Date.ToString())
+                    {
+                        MessageBox.Show("Today Attendence has been taken!");
+                        this.Hide();
+                        Main_Screen h = new Main_Screen();
+                        h.Show();
+                        y = true;
+                        break;
+                    }
+
+                }
+            }
+            if (y == false)
+            {
+
+                attendence h = new attendence();
+                this.Hide();
+                h.Show();
+
+            }
 
         }
 
@@ -76,25 +103,36 @@ namespace ProjectB
         {
 
         }
-
+        /// <summary>
+        /// loads the data of active students in datagrid view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void attendence_Load(object sender, EventArgs e)
-        {           string cmd = "SELECT * FROM Student";
-                    BindingSource s = new BindingSource();
-                    s.DataSource = databaseconnection.get_instance().ListofActivestudents(cmd);
-                    attendencedata.DataSource = s;
+        {
+            try
+            {
+                string cmd = "SELECT Id,FirstName,LastName,RegistrationNumber FROM Student Where Status='5'";
 
-                    attendencedata.Columns.RemoveAt(2);
-                    attendencedata.Columns.RemoveAt(3);
-                    attendencedata.Columns.RemoveAt(5);
-
-                    //studentdata.Columns.RemoveAt(0);
-                    attendencedata.Columns["present"].DisplayIndex = attendencedata.ColumnCount - 1;
-
+                BindingSource s = new BindingSource();
+                s.DataSource = databaseconnection.get_instance().Getdata(cmd);
+                attendencedata.DataSource = s;
+                attendencedata.Columns["present"].DisplayIndex = attendencedata.ColumnCount - 1;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 
 
         Showattendence k = new Showattendence();
+        /// <summary>
+        /// saves the attendance
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnsubmit_Click(object sender, EventArgs e)
         {
 
@@ -102,9 +140,8 @@ namespace ProjectB
             {
                 string cmd = $"INSERT INTO ClassAttendance(AttendanceDate) VALUES('{DateTime.Now.Date}')";
                 int rows = databaseconnection.get_instance().Executequery(cmd);
-                //SqlDataReader student1 = databaseconnection.get_instance().Getdata("SELECT * FROM Student");
-
-                for (int x = 0; x < attendencedata.Rows.Count - 1; x++)
+                
+                for (int x = 0; x < attendencedata.Rows.Count ; x++)
                 {
                     SqlDataReader reader1 = databaseconnection.get_instance().Getdata(string.Format("SELECT * FROM Student"));
 
@@ -155,15 +192,34 @@ namespace ProjectB
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //opens the show attendance page
             this.Hide();
             k.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            //opens the assessment manage form
             assessmentfrm k = new assessmentfrm();
             this.Hide();
             k.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ///opens the student result calculation form
+            resultStudentForm j = new resultStudentForm();
+            this.Hide();
+            j.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //Generate Reports form open
+            pdfreport o = new pdfreport();
+            this.Hide();
+            o.Show();
+
         }
     }
 }

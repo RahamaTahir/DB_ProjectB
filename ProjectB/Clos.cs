@@ -107,6 +107,7 @@ namespace ProjectB
                         {
                             while (reader.Read())
                             {
+                                //delete the assessment component that have Rubric Id
                                 string cmd5 = @"delete from AssessmentComponent where RubricId=" + temp; ;
                                 int y = databaseconnection.get_instance().Executequery(cmd5);
 
@@ -117,16 +118,19 @@ namespace ProjectB
                         {
                             while (reader2.Read())
                             {
+                                //delete the rubric level that have this rubric id
                                 string cmd5 = @"delete from RubricLevel where RubricId=" + temp; ;
                                 int y = databaseconnection.get_instance().Executequery(cmd5);
                             }
                         }
+                        //delete the rubric that have this clo Id
                         string cmd2 = @"delete from Rubric where Id=" + temp; ;
                         int s = databaseconnection.get_instance().Executequery(cmd2);
 
                     }
                 }
                 
+                //delete the Clo 
                 string cmd = @"delete from Clo where Id=" + Clo_Id; ;
                 int i = databaseconnection.get_instance().Executequery(cmd);
                 if (i > 0)
@@ -159,7 +163,7 @@ namespace ProjectB
         /// <param name="e"></param>
         private void btnShowclo_Click(object sender, EventArgs e)
         {
-
+            
             string cmd = "SELECT * FROM Clo";
             BindingSource s = new BindingSource();
             s.DataSource = databaseconnection.get_instance().ListofClo(cmd);
@@ -194,6 +198,7 @@ namespace ProjectB
 
         private void btnregister_Click(object sender, EventArgs e)
         {
+            //open the student registration form
             SRfrm n = new SRfrm();
             this.Hide();
             n.Show();
@@ -208,6 +213,7 @@ namespace ProjectB
 
         private void btnStdList_Click(object sender, EventArgs e)
         {
+            //opens the student list that are registered
             studentlist k = new studentlist();
             this.Hide();
             k.Show();
@@ -220,6 +226,7 @@ namespace ProjectB
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //opens the clo manage page
             Clos h = new Clos();
             this.Hide();
             h.Show();
@@ -228,14 +235,40 @@ namespace ProjectB
 
         private void button2_Click(object sender, EventArgs e)
         {
-            attendence h = new attendence();
-            this.Hide();
-            h.Show();
+            //Opens the attendance form if attendance has taken for that date
+            bool y = false;
+            SqlDataReader date1 = databaseconnection.get_instance().Getdata(string.Format("SELECT * FROM ClassAttendance"));
+            if (date1 != null)
+            {
+                while (date1.Read())
+                {
+                    if (date1[1].ToString() == DateTime.Now.Date.ToString())
+                    {
+                        MessageBox.Show("Today Attendence has been taken!");
+                        this.Hide();
+                        Main_Screen h = new Main_Screen();
+                        h.Show();
+                        y = true;
+                        break;
+                    }
+
+                }
+            }
+            if (y == false)
+            {
+
+                attendence h = new attendence();
+                this.Hide();
+                h.Show();
+
+            }
+
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //open the show attendance page
             Showattendence j = new Showattendence();
             this.Hide();
             j.Show();
@@ -243,9 +276,32 @@ namespace ProjectB
 
         private void button4_Click(object sender, EventArgs e)
         {
+            //open the assessment manage page
             assessmentfrm l = new assessmentfrm();
             this.Hide();
             l.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //oopens the result calculation form of students
+            resultStudentForm j = new resultStudentForm();
+            this.Hide();
+            j.Show();
+        }
+
+        private void Clos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //Generate Reports form open
+            pdfreport o = new pdfreport();
+            this.Hide();
+            o.Show();
+
         }
     }
 }

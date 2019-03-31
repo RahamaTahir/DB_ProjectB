@@ -106,6 +106,7 @@ namespace ProjectB
             id = Convert.ToInt32(this.datarubric.Rows[e.RowIndex].Cells[3].Value);
             if (datarubric.Columns[e.ColumnIndex].Name == "btn_updaterubric")
             {
+                //updates the value of register form value to edit the rubric
                 flag = false;
                 string query = "SELECT * FROM Rubric";
                 if (id != 0)
@@ -121,12 +122,16 @@ namespace ProjectB
             }
             if (datarubric.Columns[e.ColumnIndex].Name == "btn_RubricDel")
             {
+                //First it delete the Result of that student so that it don't conflict with the ID's
+                string cmd5 = @"delete from StudentResult where StudentId=" + id;
+                int y = databaseconnection.get_instance().Executequery(cmd5);
+
                 SqlDataReader reader1 = databaseconnection.get_instance().Getdata(string.Format("SELECT * FROM RubricLevel Where RubricId = '{0}'",id ));
                 if (reader1 != null)
                 {
                     while (reader1.Read())
                     {
-                        
+                        //Here it delete the Rubric levels related to that rubric
                         string cmd2 = @"delete from RubricLevel where RubricId=" + id; ;
                         int s = databaseconnection.get_instance().Executequery(cmd2);
 
@@ -137,11 +142,13 @@ namespace ProjectB
                 {
                     while (reader.Read())
                     {
-                        string cmd5 = @"delete from AssessmentComponent where RubricId=" + id; ;
-                        int y = databaseconnection.get_instance().Executequery(cmd5);
+                        //Now it delete the Assessment Components that have this rubric ID
+                        string cmd6 = @"delete from AssessmentComponent where RubricId=" + id; ;
+                        int z = databaseconnection.get_instance().Executequery(cmd6);
 
                     }
                 }
+                //It delete the rubric
                 string cmd = @"delete from Rubric where Id=" + id; ;
                 int i = databaseconnection.get_instance().Executequery(cmd);
                 if (i > 0)
@@ -216,6 +223,7 @@ namespace ProjectB
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //Open the attendance Form
             attendence h = new attendence();
             this.Hide();
             h.Show();
@@ -224,6 +232,7 @@ namespace ProjectB
 
         private void button5_Click(object sender, EventArgs e)
         {
+            //Opeen the attendance Form
             Showattendence i = new Showattendence();
             this.Hide();
             i.Show();
@@ -231,9 +240,26 @@ namespace ProjectB
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //opens the manage assessment Form
             assessmentfrm k = new assessmentfrm();
             this.Hide();
             k.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //Opens the result calulation form
+            resultStudentForm j = new resultStudentForm();
+            this.Hide();
+            j.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //Generate Reports form open
+            pdfreport o = new pdfreport();
+            this.Hide();
+            o.Show();
         }
     }
 }

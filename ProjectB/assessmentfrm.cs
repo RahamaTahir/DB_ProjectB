@@ -36,42 +36,60 @@ namespace ProjectB
         {
 
         }
+        //Id to keep the id of assessment to access it anywhere
         public static int Assess_id;
+
+        //flag to handle edit and save functionality
         bool flag = true;
+
+        //Object to save in database
         Assessment first = new Assessment();
+
+        /// <summary>
+        /// It edit or save the assessments 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSregister_Click(object sender, EventArgs e)
         {
             try
             {
-                if (flag)
+                if (txtAssesTitle.Text != "")
                 {
-                    first.Title = txtAssesTitle.Text;
-                    first.TotalMarks = Convert.ToInt32(txtTotalM.Text);
-                    first.TotalWeightage = Convert.ToInt32(txttotal.Text);
-                    first.DateCreated = DateTime.Now.Date;
-                    string cmd = $"INSERT INTO Assessment(Title,DateCreated,TotalMarks,TotalWeightage) VALUES('{first.Title}','{first.DateCreated}','{first.TotalMarks}','{first.TotalMarks}')";
-                    int rows = databaseconnection.get_instance().Executequery(cmd);
-                    MessageBox.Show(String.Format("{0} rows affected", rows));
+                    if (flag)
+                    {
+                        first.Title = txtAssesTitle.Text;
+                        first.TotalMarks = Convert.ToInt32(txtTotalM.Text);
+                        first.TotalWeightage = Convert.ToInt32(txttotal.Text);
+                        first.DateCreated = DateTime.Now.Date;
+                        string cmd = $"INSERT INTO Assessment(Title,DateCreated,TotalMarks,TotalWeightage) VALUES('{first.Title}','{first.DateCreated}','{first.TotalMarks}','{first.TotalWeightage}')";
+                        int rows = databaseconnection.get_instance().Executequery(cmd);
+                        MessageBox.Show(String.Format("{0} rows affected", rows));
+                    }
+                    else
+                    {
+                        string cmd = string.Format("UPDATE  Assessment SET Title = '{0}',TotalMarks = '{1}',TotalWeightage = '{2}'  WHERE Id= '{3}'", txtAssesTitle.Text, txtTotalM.Text, txttotal.Text, Assess_id);
+                        int rows = databaseconnection.get_instance().Executequery(cmd);
+                        MessageBox.Show(String.Format("Updated", rows));
+                        flag = true;
+                    }
+                    SqlDataReader Attendancetoday = databaseconnection.get_instance().Getdata("SELECT * FROM Assessment");
+                    BindingSource s = new BindingSource();
+                    s.DataSource = Attendancetoday;
+                    dataassessment.DataSource = s;
+
+                    dataassessment.Columns["assessmentdel"].DisplayIndex = dataassessment.ColumnCount - 1;
+                    dataassessment.Columns["assessmentupdate"].DisplayIndex = dataassessment.ColumnCount - 1;
+                    dataassessment.Columns["addcomponent"].DisplayIndex = dataassessment.ColumnCount - 1;
+
+                    txtAssesTitle.Text = "";
+                    txttotal.Text = "";
+                    txtTotalM.Text = "";
                 }
                 else
                 {
-                    string cmd = string.Format("UPDATE  Assessment SET Title = '{0}',TotalMarks = '{1}',TotalWeightage = '{2}'  WHERE Id= '{3}'", txtAssesTitle.Text, txtTotalM.Text, txttotal.Text, Assess_id);
-                    int rows = databaseconnection.get_instance().Executequery(cmd);
-                    MessageBox.Show(String.Format("Updated", rows));
-                    flag = true;
+                    MessageBox.Show("Title should not be empty");
                 }
-                SqlDataReader Attendancetoday = databaseconnection.get_instance().Getdata("SELECT * FROM Assessment");
-                BindingSource s = new BindingSource();
-                s.DataSource = Attendancetoday;
-                dataassessment.DataSource = s;
-
-                dataassessment.Columns["assessmentdel"].DisplayIndex = dataassessment.ColumnCount - 1;
-                dataassessment.Columns["assessmentupdate"].DisplayIndex = dataassessment.ColumnCount - 1;
-                dataassessment.Columns["addcomponent"].DisplayIndex = dataassessment.ColumnCount - 1;
-
-                txtAssesTitle.Text = "";
-                txttotal.Text = "";
-                txtTotalM.Text = "";
             }
             catch (Exception ex)
             {
@@ -80,16 +98,17 @@ namespace ProjectB
 
         }
 
-        private void btn_back_Click(object sender, EventArgs e)
-        {
-            Main_Screen i = new Main_Screen();
-            this.Hide();
-            i.Show();
-        }
+        
 
+        /// <summary>
+        /// Edit or delete or opens the assessment component form according to the cell Name that pressed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Assess_id = Convert.ToInt32(this.dataassessment.Rows[e.RowIndex].Cells[3].Value);
+            //edit here
             if (dataassessment.Columns[e.ColumnIndex].Name == "assessmentupdate")
             {
                 flag = false;
@@ -107,6 +126,8 @@ namespace ProjectB
                     }
                 }
             }
+
+            //Delete the Assessment component and assessment
             if (dataassessment.Columns[e.ColumnIndex].Name == "assessmentdel")
             {
                 SqlDataReader reader = databaseconnection.get_instance().Getdata(string.Format("SELECT * FROM AssessmentComponent WHERE AssessmentId='{0}'", Assess_id));
@@ -114,11 +135,13 @@ namespace ProjectB
                 {
                     while (reader.Read())
                     {
+                        //delete the assessment component here that have the save assessmeent ID
                         string cmd5 = @"delete from AssessmentComponent where AssessmentId=" + Assess_id; ;
                         int y = databaseconnection.get_instance().Executequery(cmd5);
 
                     }
                 }
+                //delete the assessment that have the assessment ID
                 string cmd = @"delete from Assessment where Id=" + Assess_id; ;
                 int i = databaseconnection.get_instance().Executequery(cmd);
                 if (i > 0)
@@ -127,6 +150,7 @@ namespace ProjectB
                 }
                 assessmentfrm_Load(sender, e);
             }
+            //opens the assessment componenet manage page
             if (dataassessment.Columns[e.ColumnIndex].Name == "addcomponent")
             {
                 AssessmentComonent i = new AssessmentComonent();
@@ -136,6 +160,11 @@ namespace ProjectB
 
         }
 
+        /// <summary>
+        /// loads the data of assessment in datagridview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void assessmentfrm_Load(object sender, EventArgs e)
         {
             string Attendancetoday = string.Format("SELECT * FROM Assessment");
@@ -152,6 +181,7 @@ namespace ProjectB
 
         private void btn_back_Click_1(object sender, EventArgs e)
         {
+            //opens the main screen
             Main_Screen j = new Main_Screen();
             this.Hide();
             j.Show();
@@ -167,17 +197,11 @@ namespace ProjectB
 
         }
 
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            Clos h = new Clos();
-            this.Hide();
-            h.Show();
-        }
-
+        
 
         private void btnregister_Click(object sender, EventArgs e)
         {
+            //opens the Student registration form
             SRfrm x = new SRfrm();
             this.Hide();
             x.Show();
@@ -186,7 +210,7 @@ namespace ProjectB
 
         private void btnAddclo_Click_1(object sender, EventArgs e)
         {
-
+            //opens the Clo manage page
             Clos n = new Clos();
             this.Hide();
             n.Show();
@@ -194,6 +218,7 @@ namespace ProjectB
 
         private void btnStdList_Click_1(object sender, EventArgs e)
         {
+            //opens the all student list
             studentlist n = new studentlist();
             this.Hide();
             n.Show();
@@ -201,11 +226,17 @@ namespace ProjectB
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //opens the Clo manage page
             Clos n = new Clos();
             this.Hide();
             n.Show();
         }
 
+        /// <summary>
+        /// Opens the attendance form if attendance has taken for that date
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click_1(object sender, EventArgs e)
         {
             bool y = false;
@@ -236,6 +267,7 @@ namespace ProjectB
 
         private void button3_Click_1(object sender, EventArgs e)
         {
+            //Opens the attendance list form
             attendence n = new attendence();
             this.Hide();
             n.Show();
@@ -244,9 +276,27 @@ namespace ProjectB
 
         private void button4_Click_1(object sender, EventArgs e)
         {
+            //open the assessment form
             assessmentfrm s = new assessmentfrm();
             this.Hide();
             s.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //opens the result calculation page of students
+            resultStudentForm j = new resultStudentForm();
+            this.Hide();
+            j.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //Generate Reports form open
+            pdfreport o = new pdfreport();
+            this.Hide();
+            o.Show();
+
         }
     }
 }

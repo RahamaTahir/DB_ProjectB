@@ -105,6 +105,11 @@ namespace ProjectB
                 return student_list;
             }
 
+        /// <summary>
+        /// Returns the List of active status students
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <returns></returns>
         public List<addstudent> ListofActivestudents(string commandText)
         {
             connection = Getconnection();
@@ -180,6 +185,11 @@ namespace ProjectB
             return rubric;
         }
 
+        /// <summary>
+        /// Returns the list of components
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <returns></returns>
         public List<Assessmentcomponent> Listofcomponents(string commandText)
         {
             connection = Getconnection();
@@ -202,6 +212,11 @@ namespace ProjectB
             return component;
         }
 
+        /// <summary>
+        /// /Return the list of assessments
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <returns></returns>
         public List<Assessmentclass> Listofassessments(string commandText)
         {
             connection = Getconnection();

@@ -50,3 +50,9 @@ R:\DB_ProjectB\ProjectB\obj\Debug\ProjectB.exe
 R:\DB_ProjectB\ProjectB\obj\Debug\ProjectB.pdb
 R:\DB_ProjectB\ProjectB\obj\Debug\ProjectB.assessmentfrm.resources
 R:\DB_ProjectB\ProjectB\obj\Debug\ProjectB.AssessmentComonent.resources
+R:\DB_ProjectB\ProjectB\obj\Debug\ProjectB.resultStudentForm.resources
+R:\DB_ProjectB\ProjectB\obj\Debug\ProjectB.marksfinal.resources
+R:\DB_ProjectB\ProjectB\bin\Debug\itextsharp.dll
+R:\DB_ProjectB\ProjectB\bin\Debug\itextsharp.xml
+R:\DB_ProjectB\ProjectB\obj\Debug\ProjectB.pdfreport.resources
+R:\DB_ProjectB\ProjectB\obj\Debug\ProjectB.csproj.CopyComplete

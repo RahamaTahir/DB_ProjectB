@@ -54,10 +54,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.comboAssessname = new System.Windows.Forms.ComboBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnStdList = new System.Windows.Forms.Button();
@@ -67,9 +71,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btn_back = new System.Windows.Forms.Button();
-            this.comboAssessname = new System.Windows.Forms.ComboBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel17.SuspendLayout();
@@ -337,6 +339,14 @@
             this.panel12.Size = new System.Drawing.Size(349, 52);
             this.panel12.TabIndex = 1;
             // 
+            // comboAssessname
+            // 
+            this.comboAssessname.FormattingEnabled = true;
+            this.comboAssessname.Location = new System.Drawing.Point(25, 16);
+            this.comboAssessname.Name = "comboAssessname";
+            this.comboAssessname.Size = new System.Drawing.Size(298, 21);
+            this.comboAssessname.TabIndex = 2;
+            // 
             // panel11
             // 
             this.panel11.Controls.Add(this.label5);
@@ -367,6 +377,8 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.button6);
+            this.panel4.Controls.Add(this.button5);
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.button3);
             this.panel4.Controls.Add(this.button2);
@@ -380,6 +392,39 @@
             this.panel4.Size = new System.Drawing.Size(200, 392);
             this.panel4.TabIndex = 5;
             // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.Location = new System.Drawing.Point(0, 220);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(198, 31);
+            this.button5.TabIndex = 13;
+            this.button5.Text = "Evaluate Assessment(s)";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.Location = new System.Drawing.Point(0, 189);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(198, 31);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "Manage Assessment(s)";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.Location = new System.Drawing.Point(0, 158);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(198, 31);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Attendance List";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // button2
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -387,7 +432,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(198, 31);
             this.button2.TabIndex = 10;
-            this.button2.Text = "Take Attendence ";
+            this.button2.Text = "Take Attendance ";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -477,35 +522,16 @@
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
-            // comboAssessname
+            // button6
             // 
-            this.comboAssessname.FormattingEnabled = true;
-            this.comboAssessname.Location = new System.Drawing.Point(25, 16);
-            this.comboAssessname.Name = "comboAssessname";
-            this.comboAssessname.Size = new System.Drawing.Size(298, 21);
-            this.comboAssessname.TabIndex = 2;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.Location = new System.Drawing.Point(0, 189);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(198, 31);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Manage Assessment(s)";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.Location = new System.Drawing.Point(0, 158);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(198, 31);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Attendance List";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.Location = new System.Drawing.Point(0, 251);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(198, 31);
+            this.button6.TabIndex = 14;
+            this.button6.Text = "Generate Report(s)";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // AssessmentComonent
             // 
@@ -589,5 +615,7 @@
         private System.Windows.Forms.ComboBox comboAssessname;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }
